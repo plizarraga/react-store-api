@@ -33,7 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_25_002642) do
     t.text "description", default: ""
     t.decimal "price", precision: 5, scale: 2
     t.string "picture_url", default: ""
-    t.string "quantity_in_stock"
+    t.integer "quantity_in_stock", default: 0, null: false
     t.bigint "product_type_id", null: false
     t.bigint "product_brand_id", null: false
     t.datetime "created_at", null: false

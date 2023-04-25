@@ -1,7 +1,11 @@
 class ProductBlueprint < Blueprinter::Base
   identifier :id
 
-  fields :name, :description, :picture_url, :quantity_in_stock
+  fields :name, :description, :quantity_in_stock
+  
+  field :picture_url do |product, options|
+    "#{Rails.application.routes.default_url_options[:host]}#{product.picture_url}"
+  end
   
   field :price do |product, options|
     product.price.to_f

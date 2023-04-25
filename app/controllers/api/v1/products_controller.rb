@@ -6,7 +6,7 @@ class Api::V1::ProductsController < Api::V1::BaseController
   end
 
   def show
-    render json: @product
+    render json: ProductBlueprint.render(@product)
   end
 
   private
